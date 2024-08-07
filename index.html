@@ -16,11 +16,11 @@
     }
     else{
         document.getElementById("question").hidden=true; 
-        state.sorry = ('sorry, that was wrong. ').concat('Your ')
+        state.sorry = ('sorry, that was wrong.  ').concat('Your ')
         state.sorry = (state.sorry).concat(' score ')
         state.sorry = (state.sorry).concat(' was ')
         state.sorry = (state.sorry).concat(state.score)
-        state.sorry = (state.sorry).concat(', by the way the correct answer was ')
+        state.sorry = (state.sorry).concat('.  by the way the correct answer was ')
         state.sorry = (state.sorry).concat(state.correct_answer)
 
         document.getElementById("sorry").innerText=state.sorry; 
