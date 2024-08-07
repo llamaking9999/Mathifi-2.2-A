@@ -1,0 +1,262 @@
+<script>
+    let state = {};
+    state.score = 0
+    state.correct_answer = 0
+    state.inputed_answer = 0
+    function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+  }
+
+  function check(){
+    state.inputed_answer=document.getElementById("inputed_answer").value;
+    if (state.inputed_answer == state.correct_answer){
+        state.score ++;
+        document.getElementById("score").innerText=(('Your score: ').concat((state.score))); 
+        hide_intro()
+    }
+    else{
+        document.getElementById("question").hidden=true; 
+        state.sorry = ('sorry, that was wrong. ').concat('Your ')
+        state.sorry = (state.sorry).concat(' score ')
+        state.sorry = (state.sorry).concat(' was ')
+        state.sorry = (state.sorry).concat(state.score)
+        state.sorry = (state.sorry).concat(', by the way the correct answer was ')
+        state.sorry = (state.sorry).concat(state.correct_answer)
+
+        document.getElementById("sorry").innerText=state.sorry; 
+
+    }
+  }
+
+  function hide_intro(){
+    document.getElementById("intro").hidden=true;  
+    document.getElementById("question").hidden=false;  
+
+  state.names = ["James","tom","Josh","Tim","Sal","minsung","sean", "alejandro","zoe","sally"]
+  state.name1 = state.names[(getRandomInt(10))]
+
+  state.items = ["friend", "enimie", "magic wishe", "dollar", "quantom-computer"]
+  state.item1 = state.items[(getRandomInt(5))]
+
+  state.num1 = (getRandomInt(320))+1
+  state.num2 = (getRandomInt(320))+1
+  state.num3 = (getRandomInt(320))+1
+  state.num4 = (getRandomInt(320))+1
+  state.num9 = (getRandomInt(320))+1
+  state.num5 = (getRandomInt(320))+1
+  state.num6 = (getRandomInt(320))+1
+  state.num7 = (getRandomInt(320))+1
+  state.num8 = (getRandomInt(12))+1
+  state.num9 = (getRandomInt(12))+1
+  state.num99 = (getRandomInt(12))+1
+  state.num999 = (getRandomInt(12))+1
+  state.num10 = (getRandomInt(6))+1
+  state.numy = (getRandomInt(320))+1
+  state.nummy = (getRandomInt(320))+1
+
+    state.op1 = (getRandomInt(3))+1
+
+
+    state.op2 = (getRandomInt(2))+1
+
+
+    state.op3 = (getRandomInt(2))+1
+
+    if (state.op1 == 3){
+    state.startingnum1 = ((getRandomInt(9))+2)
+    }
+    else{
+    state.startingnum1 = ((getRandomInt(688))+12)
+    }
+
+    state.starty = (state.name1).concat(' has ')
+    state.starty = (state.starty).concat(state.startingnum1)
+    state.starty = (state.starty).concat(' ')
+    state.starty = (state.starty).concat(state.item1)
+    state.starty = (state.starty).concat('s')
+
+    document.getElementById("storystart").innerText=state.starty;
+
+    state.correct_answer = state.startingnum1
+
+    if (state.op1 == 1){
+    state.part1 = ('First, ').concat(state.name1)
+    state.part1 = (state.part1).concat(' finds ')
+    state.part1 = (state.part1).concat(state.num1)
+    state.part1 = (state.part1).concat(' more ')
+    state.part1 = (state.part1).concat(state.item1)
+    state.part1 = (state.part1).concat('s')
+    state.correct_answer = (state.correct_answer + state.num1)
+    document.getElementById("part 1").innerText=state.part1;
+    
+    }
+
+    if (state.op1 == 2){
+        while (state.startingnum1 < state.num3){
+            state.num3 = ((getRandomInt(320-(state.startingnum1)))+1)
+        }
+    state.part1 = ('Then, ').concat(state.name1)
+    state.part1 = (state.part1).concat(' loses ')
+    state.part1 = (state.part1).concat(state.num3)
+    state.part1 = (state.part1).concat(' ')
+    state.part1 = (state.part1).concat(state.item1)
+    state.part1 = (state.part1).concat('s')
+    state.correct_answer = (state.correct_answer - state.num3)
+    document.getElementById("part 1").innerText=state.part1;
+    
+    }
+
+    if (state.op1 == 3){
+        while (state.startingnum1 < state.num3){
+            state.num3 = ((getRandomInt(320-(state.startingnum1)))+1)
+        }
+    state.part1 = ('One day, ').concat(state.name1)
+    state.part1 = (state.part1).concat(' steals ')
+    state.part1 = (state.part1).concat(state.num10)
+    state.part1 = (state.part1).concat(' times their previous amount of ')
+    state.part1 = (state.part1).concat(state.item1)
+    state.part1 = (state.part1).concat('s')
+    state.tape = ((state.startingnum1)*(state.num10))
+    state.correct_answer = (state.correct_answer) + state.tape
+    document.getElementById("part 1").innerText=state.part1;
+    
+    }
+
+    if (state.op2 == 1){
+    state.part2 = ('Then, ').concat(state.name1)
+    state.part2 = (state.part2).concat(' locates ')
+    state.part2 = (state.part2).concat(state.num2)
+    state.part2 = (state.part2).concat(' more ')
+    state.part2 = (state.part2).concat(state.item1)
+    state.part2 = (state.part2).concat('s')
+    state.correct_answer = (state.correct_answer + state.num2)
+    document.getElementById("part 2").innerText=state.part2;
+    
+    }
+
+    if (state.op2 == 2){
+        while (state.correct_answer < state.num4){
+            state.num4 = ((getRandomInt(320-(state.correct_answer)))+1)
+        }
+    state.part2 = ('Next, ').concat(state.name1)
+    state.part2 = (state.part2).concat(' gives away ')
+    state.part2 = (state.part2).concat(state.num4)
+    state.part2 = (state.part2).concat(' ')
+    state.part2 = (state.part2).concat(state.item1)
+    state.part2 = (state.part2).concat('s')
+    state.correct_answer = (state.correct_answer - state.num4)
+    document.getElementById("part 2").innerText=state.part2;
+
+    
+    }
+
+    if (state.op3 == 1){
+    state.part3 = ('Finally, ').concat(state.name1)
+    state.part3 = (state.part3).concat(' buys ')
+    state.part3 = (state.part3).concat(state.num5)
+    state.part3 = (state.part3).concat(' more ')
+    state.part3 = (state.part3).concat(state.item1)
+    state.part3 = (state.part3).concat('s')
+    state.correct_answer = (state.correct_answer + state.num5)
+    document.getElementById("part 3").innerText=state.part3;
+    
+    }
+
+    if (state.op3 == 2){
+        while (state.correct_answer < state.num6){
+            state.num6 = ((getRandomInt(320-(state.correct_answer)))+1)
+        }
+    state.part3 = ('Lastly, ').concat(state.name1)
+    state.part3 = (state.part3).concat(' sells ')
+    state.part3 = (state.part3).concat(state.num6)
+    state.part3 = (state.part3).concat(' ')
+    state.part3 = (state.part3).concat(state.item1)
+    state.part3 = (state.part3).concat('s')
+    state.correct_answer = (state.correct_answer - state.num6)
+    document.getElementById("part 3").innerText=state.part3;
+
+    
+    }
+
+    state.end = ('How many ').concat(state.item1)
+    state.end = (state.end).concat('s')
+    state.end = (state.end).concat(' do ')
+    state.end = (state.end).concat(state.name1)
+    state.end = (state.end).concat(' have now?')
+    document.getElementById("end").innerText=state.end;
+
+    }
+
+
+</script>
+
+<div id="intro">
+
+Hello these are the instructions!
+<br>
+<br>
+you will have to answer word problems untill you get one wrong
+<br>
+then you will get to see how many you got correct
+<br>
+<br>
+multiplying is weird, if its starting as 7 and then it does a multiplied by 1
+<br>
+the total will be 14
+<br>
+that's beacuase that's how many MORE you found
+<br>
+<br>
+<button onclick="hide_intro()">Start!</button>
+</div>
+<div id="question" hidden="true">
+<br>
+<br>
+<span id="score"></span>
+<br>
+<br>
+<span id="storystart"></span>
+<br>
+<span id="part 1"></span>
+<br>
+<span id="part 2"></span>
+<br>
+<span id="part 3"></span>
+<br>
+<span id="end"></span>
+<br>
+<br>
+<input type="number" id="inputed_answer"></input>
+<button onclick="check()">submit</button>
+</div>
+<br>
+<br>
+<span id="sorry"></span>
+
+<style>
+    body {
+        background-color: rgb(38, 38, 38);
+        color: rgb(255, 255, 255);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+
+    hr {
+     border-color: greenyellow;
+    }
+
+
+
+
+
+    button{
+     background-color: midnightblue;
+     color: mediumspringgreen;
+    }
+
+
+    input{
+     background-color: midnightblue;
+     color: mediumspringgreen;
+    }
+ </style>
