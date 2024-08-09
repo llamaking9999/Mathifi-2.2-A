@@ -12,7 +12,7 @@
     if (state.inputed_answer == state.correct_answer){
         state.score ++;
         document.getElementById("score").innerText=(('Your score: ').concat((state.score))); 
-        getElementById("inputed_answer").innertext='';
+        document.getElementById("inputed_answer").innertext='';
         hide_intro()
     }
     else{
